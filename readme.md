@@ -22,7 +22,10 @@
 
 - Monter le container gitlab :
     - Rentrer dans le dosier gitlab avec la cmd `cd /home/config/docker/ci`
-    - Ensuite faites la comomand `docker-compose up -d`
+    - Vous devez ensuite rentré l'ip de votre serveur dans le *docker-compose*
+    - Pour ce faire `cd /home/config/docker/ci && nano docker-compose.yml`
+    - Remplacer *URL* par votre IP
+    - Ensuite faites la command `docker-compose up -d`
     - Cette command va monter le container gitlab et le container gitlab-runner
 
 
