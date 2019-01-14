@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./conf:/etc/nginx/conf.d/
+      - ./logs:/var/logs
+      # - custom volume
+      - /home/datas/front/www:/var/www/front
+    networks:
+      - wwwnet
+  php:
+    image: php:7-fpm
+#    image: phillaf/php-mysql
+    container_name: nginx-php
+    volumes:
+      - /home/datas/workspace/www:/var/www
+    command: php-fpm --allow-to-run-as-root
+    privileged: true
+    networks:
+      - wwwnet
+
+networks:
+  wwwnet:
+    driver: bridge
+    name: wwwnet
