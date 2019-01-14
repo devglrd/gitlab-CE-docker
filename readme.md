@@ -14,6 +14,9 @@
 
 - Monter le container nginx
     - Pour monter le container nginx rendez vous dans `cd /home/config/docker/nginx`
+    - Rendez vous dans le dossier de conf de nginx `cd /home/config/docker/nginx/conf`
+    - Editer le fichier `site.conf` et remplacer les *IP_DU_SERVEUR* par l'ip de votre serveur
+    - Remonter ensuite au niveau du docker-compose `cd ..`
     - Ensuite faites la command `docker-compose up -d`
     - Cette command va monter le container nginx
 

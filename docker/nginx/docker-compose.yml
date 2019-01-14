@@ -6,20 +6,21 @@ services:
     container_name: nginx-proxy
     ports:
       - "80:80"
+      - "82:82"
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /var/run/docker.sock:/tmp/docker.sock
       - ./conf:/etc/nginx/conf.d/
       - ./logs:/var/logs
       # - custom volume
-      - /home/datas/front/www:/var/www/front
+      - /home/config/datas/front:/var/www/front
     networks:
       - wwwnet
+      
   php:
     image: php:7-fpm
-#    image: phillaf/php-mysql
     container_name: nginx-php
     volumes:
-      - /home/datas/workspace/www:/var/www
+      - /home/config/datas/workspace:/var/www/workspace
     command: php-fpm --allow-to-run-as-root
     privileged: true
     networks:
