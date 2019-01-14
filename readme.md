@@ -8,8 +8,8 @@
 #### En premier lieu
 
 - Cloner le projet dans le dossier `/home` de votre serveur
-    - lancer la cmd `git clone https://github.com/devglrd/ci-gitlab-nginx-docker.git`
-	- Ensuite rentré dans le dossier `mv ci-gitlab-nginx-docker/ config`
+    - lancer la cmd `git clone https://github.com/devglrd/gitlab-CE-docker`
+	- Ensuite rentré dans le dossier `mv gitlab-CE-docker/ config`
     - Ensuite rentré dans le dossier `cd config`
 
 - Monter le container nginx
